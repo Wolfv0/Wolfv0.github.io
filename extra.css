@@ -1,0 +1,71 @@
+table.customers {
+font-family: Arial, Helvetica, sans-serif;
+border-collapse: collapse;
+width: 100%;
+}
+
+table.customers td, table.customers th {
+border: 1px solid #ddd;
+padding: 8px;
+}
+
+table.customers tr:nth-child(even){background-color: #f2f2f2;}
+
+table.customers tr:hover {background-color: #ddd;}
+
+table.customers th {
+padding-top: 12px;
+padding-bottom: 12px;
+text-align: left;
+background-color: #76b900;
+color: white;
+}
+  
+  
+  
+.author-block {
+    /* toooo many authors */
+    font-size: large;
+}
+
+pre {
+    position: relative;
+}
+
+.copy-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 5px 10px;
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+
+code,
+pre {
+    position: relative;
+}
+
+code,
+pre {
+    display: block;
+    padding: 20px;
+    background: #f2f2f2;
+    color: #555755;
+}
+
+span.command-copy {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    opacity: .6;
+    font-size: 20px;
+    color: #555755;
+}
+
+span.command-copy:hover {
+    cursor: pointer;
+}
