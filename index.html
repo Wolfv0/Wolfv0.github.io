@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="description" content="Captioning Everything with a World Summarization Framework.">
@@ -21,13 +22,18 @@
     gtag('config', 'G-PYVRSFMDRL');
   </script>  -->
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+
+  <link rel="stylesheet" href="extra.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
   <link rel="icon" href="./static/images/icon1.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
@@ -36,221 +42,324 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
+  <script>
+      $(document).ready(function() {
+          $('pre').append('<span class="command-copy"><i class="fa fa-clipboard" aria-hidden="true"></i></span>');
+
+          $('code span.command-copy, pre span.command-copy').click(function(e) {
+              var copyText = $(this).parent().text().trim();
+              var copyHex = document.createElement('textarea');
+              copyHex.value = copyText;
+              document.body.appendChild(copyHex);
+              copyHex.select();
+              document.execCommand('copy');
+              document.body.removeChild(copyHex);
+
+              $(this).html('<i class="fa fa-check" aria-hidden="true"></i>');
+              setTimeout(() => {
+                  $(this).html('<i class="fa fa-clipboard" aria-hidden="true"></i>');
+              }, 2000);
+          });
+      });
+  </script>
+
 </head>
+
 <body>
 
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">🐺 Wolf: Captioning Everything <br> with a World Summarization Framework</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=0JH6YbEAAAAJ&hl=en">Boyi Li</a><sup>1,2</sup></span>
-            <span class="author-block">
-              <a href="https://scholar.google.ca/citations?user=y0LVrtgAAAAJ&hl=en">Ligeng Zhu</a><sup>1,3</sup></span>
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=uY4D8-wAAAAJ&hl=en">Ran Tian</a><sup>1,2</sup>
-            </span>
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=Ro6enEEAAAAJ&hl=en">Shuhan Tan</a><sup>1,4</sup>
-            </span>
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=AOdxmJYAAAAJ&hl=en">Yuxiao Chen</a><sup>1</sup>
-            </span>
-            <span class="author-block">
-              <a href="https://research.nvidia.com/person/yao-lu-jason">Yao Lu</a><sup>1</sup>
-            </span>
-            <br>
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=iP5m52IAAAAJ&hl=en">Yin Cui</a><sup>1</sup>
-            </span>
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=1FiIlQsAAAAJ&hl=en">Sushant Veer</a><sup>1,3</sup>
-            </span>
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=q-WSy3AAAAAJ&hl=en">Max Ehrlich</a><sup>1,3</sup>
-            </span>
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=VVIAoY0AAAAJ&hl=en">Jonah Philion</a><sup>1,5</sup>
-            </span>
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=dthSEsoAAAAJ&hl=en">Xinshuo Weng</a><sup>1</sup>
-            </span>
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=JMHsqIkAAAAJ&hl=zh-CN">Fuzhao Xue</a><sup>1</sup>
-            </span>
-            <br>
-            <span class="author-block">
-              <a href="https://www.linkedin.com/in/andrew-tao-6b6369/">Andrew Tao</a><sup>1</sup>
-            </span>
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=y-f-MZgAAAAJ&hl=en">Ming-Yu Liu</a><sup>1</sup>
-            </span>
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=CUlqK5EAAAAJ&hl=en">Sanja Fidler</a><sup>1,5</sup>
-            </span>
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=ey9AQcEAAAAJ&hl=en">Boris Ivanovic</a><sup>1</sup>
-            </span>
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=bh-uRFMAAAAJ&hl=en">Trevor Darrell</a><sup>2</sup>
-            </span>
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=aOklxsQAAAAJ&hl=en">Jitendra Malik</a><sup>2</sup>
-            </span>
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=E0iCaa4AAAAJ&hl=en">Song Han</a><sup>1,3</sup>
-            </span>
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=RhOpyXcAAAAJ&hl=en">Marco Pavone</a><sup>1,6</sup>
-            </span>
-          </div>
-
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>NVIDIA,</span>
-            <span class="author-block"><sup>2</sup>UC Berkeley,</span>
-            <span class="author-block"><sup>3</sup>MIT,</span>
-            <span class="author-block"><sup>4</sup>UT Austin,</span>
-            <span class="author-block"><sup>5</sup>University of Toronto,</span>
-            <span class="author-block"><sup>6</sup>Stanford University</span>
-          </div>
-
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered">
           <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a href="https://arxiv.org/pdf/" 
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
+            <h1 class="title is-1 publication-title">🐺 Wolf: Captioning Everything <br> with a World Summarization
+              Framework</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=0JH6YbEAAAAJ&hl=en">Boyi Li</a><sup>1,2</sup></span>
+              <span class="author-block">
+                <a href="https://scholar.google.ca/citations?user=y0LVrtgAAAAJ&hl=en">Ligeng
+                  Zhu</a><sup>1,3</sup></span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=uY4D8-wAAAAJ&hl=en">Ran Tian</a><sup>1,2</sup>
               </span>
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=Ro6enEEAAAAJ&hl=en">Shuhan Tan</a><sup>1,4</sup>
               </span>
-              <!-- Video Link. -->
-              <span class="link-block">
-                <a href="https://www.youtube.com/@boyili3727"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=AOdxmJYAAAAJ&hl=en">Yuxiao Chen</a><sup>1</sup>
               </span>
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://github.com/Boyiliee/"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                  </a>
+              <span class="author-block">
+                <a href="https://research.nvidia.com/person/yao-lu-jason">Yao Lu</a><sup>1</sup>
               </span>
-              <!-- Leaderboard. -->
-              <span class="link-block">
-                <a href="https://wolfv0.github.io/"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-smile"></i>
-                  </span>
-                  <span>Leaderboard Coming Soon!</span>
-                  </a>
+              <br>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=iP5m52IAAAAJ&hl=en">Yin Cui</a><sup>1</sup>
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=1FiIlQsAAAAJ&hl=en">Sushant Veer</a><sup>1,3</sup>
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=q-WSy3AAAAAJ&hl=en">Max Ehrlich</a><sup>1,3</sup>
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=VVIAoY0AAAAJ&hl=en">Jonah Philion</a><sup>1,5</sup>
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=dthSEsoAAAAJ&hl=en">Xinshuo Weng</a><sup>1</sup>
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=JMHsqIkAAAAJ&hl=zh-CN">Fuzhao Xue</a><sup>1</sup>
+              </span>
+              <br>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/andrew-tao-6b6369/">Andrew Tao</a><sup>1</sup>
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=y-f-MZgAAAAJ&hl=en">Ming-Yu Liu</a><sup>1</sup>
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=CUlqK5EAAAAJ&hl=en">Sanja Fidler</a><sup>1,5</sup>
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=ey9AQcEAAAAJ&hl=en">Boris Ivanovic</a><sup>1</sup>
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=bh-uRFMAAAAJ&hl=en">Trevor Darrell</a><sup>2</sup>
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=aOklxsQAAAAJ&hl=en">Jitendra Malik</a><sup>2</sup>
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=E0iCaa4AAAAJ&hl=en">Song Han</a><sup>1,3</sup>
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=RhOpyXcAAAAJ&hl=en">Marco Pavone</a><sup>1,6</sup>
               </span>
             </div>
 
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>NVIDIA,</span>
+              <span class="author-block"><sup>2</sup>UC Berkeley,</span>
+              <span class="author-block"><sup>3</sup>MIT,</span>
+              <span class="author-block"><sup>4</sup>UT Austin,</span>
+              <span class="author-block"><sup>5</sup>University of Toronto,</span>
+              <span class="author-block"><sup>6</sup>Stanford University</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Video Link. -->
+                <span class="link-block">
+                  <a href="https://www.youtube.com/@boyili3727"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/Boyiliee/" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <!-- Leaderboard. -->
+                <span class="link-block">
+                  <a href="#leaderboard" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="far fa-smile"></i>
+                    </span>
+                    <span>Leaderboard</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="hero teaser">
-  <div class="hero-body">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <img src="./static/images/main.png" alt="Main Image">
-        <h2 class="subtitle has-text-centered">
-          Wolf: Captioning Everything with a World Summarization Framework
-        </h2>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<section class="section">
-  <div class="container">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-two-thirds">
-        <h2 class="title is-2">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            We propose Wolf, a WOrLd summarization Framework for accurate video captioning. Wolf is an automated captioning framework that adopts a mixture-of-experts approach, leveraging complementary strengths of Vision Language Models (VLMs). By utilizing both image and video models, our framework captures different levels of information and summarizes them efficiently. Our approach can be applied to enhance video understanding, auto-labeling, and captioning. To evaluate caption quality, we introduce CapScore, an LLM-based metric to assess the similarity and quality of generated captions compared to the ground truth captions. We further build four human-annotated datasets in three domains: autonomous driving, general scenes, and robotics, to facilitate comprehensive comparisons. We show that Wolf achieves superior captioning performance compared to state-of-the-art approaches from the research community (VILA1.5, CogAgent) and commercial solutions (Gemini-Pro-1.5, GPT-4V). For instance, in comparison with GPT-4V, Wolf improves CapScore (caption quality) by 55.6% and CapScore (caption similarity) by 77.4% on challenging driving videos. Finally, we establish a benchmark for video captioning and introduce a leaderboard, aiming to accelerate advancements in video understanding, captioning, and data alignment.
-          </p>
+  <section class="hero teaser">
+    <div class="hero-body">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <img src="./static/images/main.png" alt="Main Image">
+          <h2 class="subtitle has-text-centered">
+            Wolf: Captioning Everything with a World Summarization Framework
+          </h2>
         </div>
       </div>
     </div>
-  </div>
-</section>
-  <!--/ Abstract. -->
+  </section>
 
-<!--   <section class="section">
-  <div class="hero-body">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <h2 class="title is-2">Examples</h2>
-        <div style="text-align: center;">
-            <img src="./static/images/tbd.png" alt="Example Image">
+
+
+  <section class="hero teaser">
+    <div class="hero-body">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <h2 class="title is-2 has-text-centered">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              We propose Wolf, a WOrLd summarization Framework for accurate video captioning. Wolf is an automated
+              captioning framework that adopts a mixture-of-experts approach, leveraging complementary strengths of
+              Vision Language Models (VLMs). By utilizing both image and video models, our framework captures different
+              levels of information and summarizes them efficiently. Our approach can be applied to enhance video
+              understanding, auto-labeling, and captioning. To evaluate caption quality, we introduce CapScore, an
+              LLM-based metric to assess the similarity and quality of generated captions compared to the ground truth
+              captions. We further build four human-annotated datasets in three domains: autonomous driving, general
+              scenes, and robotics, to facilitate comprehensive comparisons. We show that Wolf achieves superior
+              captioning performance compared to state-of-the-art approaches from the research community (VILA1.5,
+              CogAgent) and commercial solutions (Gemini-Pro-1.5, GPT-4V). For instance, in comparison with GPT-4V, Wolf
+              improves CapScore (caption quality) by 55.6% and CapScore (caption similarity) by 77.4% on challenging
+              driving videos. Finally, we establish a benchmark for video captioning and introduce a leaderboard, aiming
+              to accelerate advancements in video understanding, captioning, and data alignment.
+            </p>
+          </div>
         </div>
-        TBD.
       </div>
     </div>
-  </div>
-</section> -->
-  
-<section class="section">
-  <div class="hero-body">
-  <div class="columns is-centered">
-      <div class="column is-8">
-        <h2 class="title is-3">Updates</h2>
-        Thanks for your interest in Wolf! We will update more details shortly. Stay tuned!
-        <div class="content has-text-justified">
-        </div>
+  </section>
 
+  <section class="hero teaser">
+    <div class="hero-body">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <h2 class="title is-2 has-text-centered" id="leaderboard">Leaderboard</h2>
+          <table class="customers">
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th colspan="3">Caption Similarity ↑</th>
+                <th colspan="3">Caption Quality (eg. reduced hallucination) ↑</th>
+              </tr>
+              <tr>
+                <th>Scenarios</th>
+                <th>Nuscenes</th>
+                <th>Pexels Robotics</th>
+                <th>Overall</th>
+                <th>Nuscenes</th>
+                <th>Pexels Robotics</th>
+                <th>Overall</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>CogAgent</td>
+                <td>0.18</td>
+                <td>0.68</td>
+                <td>0.38</td>
+                <td>0.24</td>
+                <td>0.72</td>
+                <td>0.43</td>
+              </tr>
+              <tr>
+                <td>GPT-4V</td>
+                <td>0.31</td>
+                <td>0.72</td>
+                <td>0.34</td>
+                <td>0.36</td>
+                <td>0.75</td>
+                <td>0.35</td>
+              </tr>
+              <tr>
+                <td>VILA-1.5-13b</td>
+                <td>0.21</td>
+                <td>0.85</td>
+                <td>0.62</td>
+                <td>0.25</td>
+                <td>0.86</td>
+                <td>0.67</td>
+              </tr>
+              <tr>
+                <td>Gemini-Pro-1.5</td>
+                <td>0.42</td>
+                <td>0.87</td>
+                <td>0.63</td>
+                <td>0.45</td>
+                <td>0.87</td>
+                <td>0.67</td>
+              </tr>
+              <tr>
+                <td><b>Wolf(ours)</b></td>
+                <td><b>0.55</b></td>
+                <td><b>0.88</b></td>
+                <td><b>0.72</b></td>
+                <td><b>0.56</b></td>
+                <td><b>0.89</b></td>
+                <td><b>0.75</b></td>
+              </tr>
+              </tr>
+            </tbody>
+          </table>
+          
+
+        </div>
       </div>
     </div>
-</div>
-</section>
-  
-<section class="section" id="BibTeX">
-  <div class="container content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@inproceedings{li2024wolf,
-        title={Wolf: Captioning Everything with a World Summarization Framework},
-        author={Li, Boyi and Zhu, Ligeng and Tian, Ran and Tan, Shuhan and Chen, Yuxiao and Lu, Yao and Cui, Yin and Veer, Sushant and Ehrlich, Max and Philion, Jonah and Weng, Xinshuo and Xue, Fuzhao and Tao, Andrew and Liu, and Fidler, Sanja and Ivanovic, Boris and Darrell, Trevor and Malik, Jitendra and Han, Song and Pavone, Marco},
-        journal={},
-        year={2024},
-      }</code></pre>
-  </div>
-</section>
+  </section>
+
+
+  <section class="hero teaser">
+    <div class="hero-body">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <h2 class="title is-2 has-text-centered">Udpates</h2>
+          Thanks for your interest in Wolf! We will update more details shortly. Stay tuned!
+          <div class="content has-text-justified">
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="hero teaser" id="BibTeX">
+    <div class="hero-body">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <h2 class="title is-2 has-text-centered">BibTeX</h2>
+          <pre class="command-copy"><code>@inproceedings{li2024wolf,
+  title={Wolf: Captioning Everything with a World Summarization Framework},
+  author={Li, Boyi and Zhu, Ligeng and Tian, Ran and Tan, Shuhan and Chen, Yuxiao and Lu, Yao and Cui, Yin and Veer, Sushant and Ehrlich, Max and Philion, Jonah and Weng, Xinshuo and Xue, Fuzhao and Tao, Andrew and Liu, and Fidler, Sanja and Ivanovic, Boris and Darrell, Trevor and Malik, Jitendra and Han, Song and Pavone, Marco},
+  journal={},
+  year={2024},
+}</code>
+</pre>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
 
 </body>
+
 </html>
