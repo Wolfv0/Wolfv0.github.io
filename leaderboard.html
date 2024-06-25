@@ -189,11 +189,11 @@
                 </span>
                 <!-- Leaderboard. -->
                 <span class="link-block">
-                  <a href="./leaderboard.html" class="external-link button is-normal is-rounded is-dark">
+                  <a href="./index.html" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="far fa-smile"></i>
                     </span>
-                    <span>Leaderboard</span>
+                    <span>Homepage</span>
                   </a>
                 </span>
               </div>
@@ -205,18 +205,6 @@
     </div>
   </section>
 
-  <section class="hero teaser">
-    <div class="hero-body">
-      <div class="columns is-centered">
-        <div class="column is-8">
-          <img src="./static/images/main.png" alt="Main Image">
-          <h2 class="subtitle has-text-centered">
-            Wolf: Captioning Everything with a World Summarization Framework
-          </h2>
-        </div>
-      </div>
-    </div>
-  </section>
 
 
 
@@ -224,41 +212,80 @@
     <div class="hero-body">
       <div class="columns is-centered">
         <div class="column is-8">
-          <h2 class="title is-2 has-text-centered">Abstract</h2>
-          <div class="content has-text-justified">
-            <p>
-              We propose Wolf, a WOrLd summarization Framework for accurate video captioning. Wolf is an automated
-              captioning framework that adopts a mixture-of-experts approach, leveraging complementary strengths of
-              Vision Language Models (VLMs). By utilizing both image and video models, our framework captures different
-              levels of information and summarizes them efficiently. Our approach can be applied to enhance video
-              understanding, auto-labeling, and captioning. To evaluate caption quality, we introduce CapScore, an
-              LLM-based metric to assess the similarity and quality of generated captions compared to the ground truth
-              captions. We further build four human-annotated datasets in three domains: autonomous driving, general
-              scenes, and robotics, to facilitate comprehensive comparisons. We show that Wolf achieves superior
-              captioning performance compared to state-of-the-art approaches from the research community (VILA1.5,
-              CogAgent) and commercial solutions (Gemini-Pro-1.5, GPT-4V). For instance, in comparison with GPT-4V, Wolf
-              improves CapScore (caption quality) by 55.6% and CapScore (caption similarity) by 77.4% on challenging
-              driving videos. Finally, we establish a benchmark for video captioning and introduce a leaderboard, aiming
-              to accelerate advancements in video understanding, captioning, and data alignment.
-            </p>
-          </div>
+          <h2 class="title is-2 has-text-centered" id="leaderboard">Leaderboard</h2>
+          <table class="customers">
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th colspan="3">Caption Similarity ↑</th>
+                <th colspan="3">Caption Quality (eg. reduced hallucination) ↑</th>
+              </tr>
+              <tr>
+                <th>Scenarios</th>
+                <th>Nuscenes</th>
+                <th>Pexels</th>
+                <th>Robotics</th>
+                <th>Nuscenes</th>
+                <th>Pexels</th>
+                <th>Robotics</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>CogAgent</td>
+                <td>0.18</td>
+                <td>0.68</td>
+                <td>0.38</td>
+                <td>0.24</td>
+                <td>0.72</td>
+                <td>0.43</td>
+              </tr>
+              <tr>
+                <td>GPT-4V</td>
+                <td>0.31</td>
+                <td>0.72</td>
+                <td>0.34</td>
+                <td>0.36</td>
+                <td>0.75</td>
+                <td>0.35</td>
+              </tr>
+              <tr>
+                <td>VILA-1.5-13b</td>
+                <td>0.21</td>
+                <td>0.85</td>
+                <td>0.62</td>
+                <td>0.25</td>
+                <td>0.86</td>
+                <td>0.67</td>
+              </tr>
+              <tr>
+                <td>Gemini-Pro-1.5</td>
+                <td>0.42</td>
+                <td>0.87</td>
+                <td>0.63</td>
+                <td>0.45</td>
+                <td>0.87</td>
+                <td>0.67</td>
+              </tr>
+              <tr>
+                <td><b>Wolf(ours)</b></td>
+                <td><b>0.55</b></td>
+                <td><b>0.88</b></td>
+                <td><b>0.72</b></td>
+                <td><b>0.56</b></td>
+                <td><b>0.89</b></td>
+                <td><b>0.75</b></td>
+              </tr>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+          <p>
+            We are continuously adding more models to the leaderboard. If you would like to add your model, please contact us!
+          </p>
         </div>
       </div>
-    </div>
-  </section>
-
-
-  <section class="hero teaser">
-    <div class="hero-body">
-      <div class="columns is-centered">
-        <div class="column is-8">
-          <h2 class="title is-2 has-text-centered">Udpates</h2>
-          Thanks for your interest in Wolf! We will update more details shortly. Stay tuned!
-          <div class="content has-text-justified">
-          </div>
-
-        </div>
-      </div>
+   
     </div>
   </section>
 
